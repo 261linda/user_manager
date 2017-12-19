@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .card.border-success.mb-3
+    h1.card-header #{title}
+    h5.card-header.text-muted CRUD Panel for creating,reading,updating and deleting users, click the register users on navigation bar to create a new list OR click the user email address below to update/delete after the admin log in.
+    ul.list-group
+      each article, i in articles
+        li.list-group-item.blockquote
+          a(href="/articles/"+article._id)= article.body

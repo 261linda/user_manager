@@ -1,0 +1,104 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=yes ')
+    meta(name='description', content='An ALC-MICROSOFT ADVANCED WEB ASSESSMENT THAT CARRIES OUT A CRUD(create,read, update and delete) FUNCTION.')
+    meta(name='author', content='Oluchi Orji')
+    title Microsoft Andela web assessment. 
+    // Bootstrap core CSS
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(href='/css/bootstrap.css', rel='stylesheet')
+    link(href='/css/style.css', rel='stylesheet')
+
+    
+    
+    
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarColor01", aria-controls="navbarColor01", aria-expanded="false", aria-label="Toggle navigation", style="")
+        span.navbar-toggler-icon
+    
+      .container
+        .navbar
+          img.rounded-circle(src='/images/microsoft.jpg', alt='Generic placeholder image', width='50', height='50')
+          a.navbar-brand(href='/', style='margin-left:0.5rem; font-size:1.7rem') MICROSOFT-ANDELA CRUD ASSESSMENT.
+      #navbarColor01.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/') HOME
+              span.sr-only
+          if user
+            li.nav-item.active
+              a.nav-link(href='/articles/add') REGISTER USER
+        ul.navbar-nav.mr-auto
+          if user
+            li.nav-item.active 
+              a.nav-link(href='/users/logout') ADMIN LOGOUT
+          else
+            li.nav-item
+              a.nav-link(href='/users/register') ADMIN REGISTRATION
+            li.nav-item
+              a.nav-link(href='/users/login') ADMIN LOGOUT
+  
+ 
+    
+  
+     
+    .container.marketing
+      .row
+      .jumbotron
+        .container
+          != messages('message', locals)
+          if errors
+            each error, i in errors
+              div(class="alert alert-dismissible alert-warning") #{error.msg}      
+        
+          block content
+          br
+          hr
+    .row
+        .col-lg-4
+          img.rounded-circle(img='', src='/images/reg.jpg', alt='Generic placeholder image', width='140', height='140')
+          h2 FIRST STEP
+          p
+            | The crud api web app is only accesible by an admin, so first of all, the admin registers using the registration form.
+          p
+            a.btn.btn-secondary(href='#', role='button', style='background-color:blue') REGISTER
+        // /.col-lg-4
+        .col-lg-4
+          img.rounded-circle(src='/images/login.jpg', alt='Generic placeholder image', width='140', height='140')
+          h2 SECOND STEP
+          p
+            | After registration , the admin logins, without logging in,the admin cannot have access to the CRUD API.
+          p
+            a.btn.btn-secondary(href='#', role='button', style='background-color:blue') LOGIN
+        // /.col-lg-4
+        .col-lg-4
+          img.rounded-circle(src='/images/icon.png', alt='Generic placeholder image', width='140', height='140')
+          h2 THIRD STEP
+          p
+            | The features include creating, editing,updating and deleting the users
+          p
+            a.btn.btn-secondary(href='#', role='button', style='background-color:blue') ACCESS THE CRUD FEATURES
+        // /.col-lg-4
+        // /.row
+          br
+          br
+          hr
+
+    
+
+    .myjumbotron
+      footer
+        p(style='font-size:1.4em; color:white; text-align:center') OLUCHI ORJI (08161238087) MicroSoft-Andela 
+  
+    script(src='/bower_components/jquery/dist/jquery.js') 
+    script(src='/js/popper.min.js')
+    script(src='js/bootstrap.min.js')
+    // Just to make our placeholder images work. Don't actually copy the next line!
+    script(src='/js/holder.min.js')
+    // IE10 viewport hack for Surface/desktop Windows 8 bug
+    script(src='/js/ie10-viewport-bug-workaround.js')
+    script(src='/js/delete.js')

@@ -1,0 +1,28 @@
+{
+    "name": "Microsoft_Andela",
+    "version": "1.0.0",
+    "description": "user manager app for crud function",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server"
+    },
+    "author": "oluchi orji",
+    "license": "MIT",
+    "dependencies": {
+        "bcryptjs": "^*",
+        "body-parser": "^*",
+        "bootstrap": "^*",
+        "connect-flash": "^*",
+        "cors": "^*",
+        "dotenv": "^*",
+        "express": "^*",
+        "express-messages": "^*",
+        "express-session": "^*",
+        "express-validator": "^*",
+        "mongoose": "^*",
+        "passport": "^*",
+        "passport-local": "^*",
+        "popper.js": "^*",
+        "pug": "^2.0.0-rc.4"
+    }
+}

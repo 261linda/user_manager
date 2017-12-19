@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .card.border-success.mb-3
+    h1.card-header #{title}
+    form(method='POST', action='/articles/edit/'+article._id)
+      #form-group
+        label.card-body.text-info.blockquote Admin MongoDB code:
+        input.form-control-lg(name='author', type='text', value=article.author)
+      #form-group
+        label.card-body.text-info.blockquote user Fullname:
+        input.form-control-lg(name='title', type='text', value=article.title)
+      #form-group
+        label.card-body.text-info.blockquote user email address:
+        textarea.form-control-lg(name='body')= article.body
+      br
+      input.btn-lg.btn-success.btn-block(type='submit',value='Submit')
